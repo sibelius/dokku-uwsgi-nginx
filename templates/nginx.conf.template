@@ -4,7 +4,7 @@ server {
   server_name $NOSSL_SERVER_NAME;
   location    / {
     include uwsgi_params;
-    uwsgi_pass $DOKKU_APP_LISTEN_IP:$DOKKU_APP_LISTEN_PORT
+    uwsgi_pass $DOKKU_APP_LISTEN_IP:$DOKKU_APP_LISTEN_PORT;
     proxy_pass  http://$APP;
     proxy_http_version 1.1;
     proxy_set_header Upgrade \$http_upgrade;
